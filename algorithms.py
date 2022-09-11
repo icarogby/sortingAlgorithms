@@ -31,6 +31,7 @@ def bubbleSort(arr: list) -> list:
     return arr
 
 # selectionsort
+# shell
 
 def mergeSort(arr: list) -> list:
     if len(arr) > 1:
@@ -65,3 +66,6 @@ def mergeSort(arr: list) -> list:
             k += 1
 
     return arr
+
+# heap
+# quick
