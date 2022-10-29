@@ -1,8 +1,22 @@
 from algorithms import *
 from time import time
+import sys
 
 def main():
-    arr = [5,7,9,3,24,-70,-5,95,67,0,-2,123,14,95,75]
+    sys.setrecursionlimit(200000)
+
+    opc = input("File Adress: ")
+
+
+    file = open(opc)
+    arr = []
+
+    for line in file:
+        arr.append(int(line))
+
+    file.close()
+
+    print(arr)
 
     opc = int(input("Select a algorithm: "))
 
