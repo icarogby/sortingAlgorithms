@@ -1,23 +1,30 @@
 from algorithms import *
+from time import time
 
 def main():
-    arr1 = [5, 3, 4, 2]
-    print(selectionSort(arr1))
+    arr = [5,7,9,3,24,-70,-5,95,67,0,-2,123,14,95,75]
 
-    arr2 = [5, 3, 4, 2]
-    print(insertionSort(arr2))
+    opc = int(input("Select a algorithm: "))
 
-    arr3 = [5, 3, 4, 2]
-    print(bubbleSort(arr3))
+    time1 = time()
+    match opc:
+        case 0:
+            selectionSort(arr)
+        case 1:
+            insertionSort(arr)
+        case 2:
+            bubbleSort(arr)
+        case 3:
+            mergeSort(arr)
+        case 4:
+            heapSort(arr)
+        case 5:
+            quickSort(arr)
 
-    arr4 = [5, 3, 4, 2]
-    print(mergeSort(arr4))
+    time2 = time()
 
-    arr5 = [5, 3, 4, 2]
-    print(heapSort(arr5))
-
-    arr6 = [5, 3, 4, 2]
-    print(quickSort(arr6))
+    print(arr)
+    print(time2-time1)
 
 if __name__ == "__main__":
     main()

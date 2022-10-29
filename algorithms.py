@@ -127,12 +127,9 @@ def quickSort(arr: list) -> list:
         (arr[i + 1], arr[high]) = (arr[high], arr[i + 1])
 
         pi = i + 1
-
-        left = arr[:pi]
-        right = arr[pi:]
  
-        quickSort(left)
-        quickSort(right)
+        arr[:pi] = quickSort(arr[:pi])
+        arr[pi:] = quickSort(arr[pi:])
 
     return arr
     
