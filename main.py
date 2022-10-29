@@ -16,5 +16,8 @@ def main():
     arr5 = [5, 3, 4, 2]
     print(heapSort(arr5))
 
+    arr6 = [5, 3, 4, 2]
+    print(quickSort(arr6))
+
 if __name__ == "__main__":
     main()

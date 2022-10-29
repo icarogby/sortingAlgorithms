@@ -109,4 +109,30 @@ def heapSort(arr: list) -> list:
     
     return arr
 
-# quick -------------------------
+def quickSort(arr: list) -> list:
+    low = 0
+    high = len(arr)-1
+
+    if low < high:
+        pivot = arr[high]
+ 
+        i = low - 1
+    
+        for j in range(low, high):
+            if arr[j] <= pivot:
+                i = i + 1
+    
+                (arr[i], arr[j]) = (arr[j], arr[i])
+    
+        (arr[i + 1], arr[high]) = (arr[high], arr[i + 1])
+
+        pi = i + 1
+
+        left = arr[:pi]
+        right = arr[pi:]
+ 
+        quickSort(left)
+        quickSort(right)
+
+    return arr
+    
