@@ -1,6 +1,6 @@
 from tests import *
 
-from matplotlib import pyplot as plt
+# from matplotlib import pyplot as plt
 
 
 def main():
@@ -8,7 +8,7 @@ def main():
 
     # x = [1, 2, 3, 4, 5]
 
-    Results = quickTest(3)
+    Results = quickTest(2)
     # plt.scatter(x, Results)
 
     # plt.show()

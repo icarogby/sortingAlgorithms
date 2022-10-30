@@ -303,14 +303,14 @@ def quickTest(opc: int) -> list:
     time2 = time()
     results.append(time2 - time1)
 
-    time1 = time()
-    quickSort(temp_arr4)
-    time2 = time()
-    results.append(time2 - time1)
+    # time1 = time()
+    # quickSort(temp_arr4)
+    # time2 = time()
+    # results.append(time2 - time1)
 
-    time1 = time()
-    quickSort(temp_arr5)
-    time2 = time()
-    results.append(time2 - time1)
+    # time1 = time()
+    # quickSort(temp_arr5)
+    # time2 = time()
+    # results.append(time2 - time1)
 
     return results
