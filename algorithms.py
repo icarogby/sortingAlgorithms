@@ -115,7 +115,7 @@ def quickSort(arr: list) -> list:
 
     if low < high:
         pivot = arr[high]
- 
+
         i = low - 1
     
         for j in range(low, high):
