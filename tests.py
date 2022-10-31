@@ -5,17 +5,15 @@ import sys
 
 def loadAleatory():
     try:
-        file1 = open("test cases\\800aleatory.txt")
-        file2 = open("test cases\\4000aleatory.txt")
-        file3 = open("test cases\\20000aleatory.txt")
-        file4 = open("test cases\\100000aleatory.txt")
-        file5 = open("test cases\\500000aleatory.txt")
+        file1 = open("test cases\\160aleatory.txt")
+        file2 = open("test cases\\800aleatory.txt")
+        file3 = open("test cases\\4000aleatory.txt")
+        file4 = open("test cases\\20000aleatory.txt")
 
         arr1 = []
         arr2 = []
         arr3 = []
         arr4 = []
-        arr5 = []
 
         for line in file1:
             arr1.append(int(line))
@@ -28,9 +26,6 @@ def loadAleatory():
 
         for line in file4:
             arr4.append(int(line))
-
-        for line in file5:
-            arr5.append(int(line))
     
     except:
         print("Fail.")
@@ -39,23 +34,20 @@ def loadAleatory():
         file2.close()
         file3.close()
         file4.close()
-        file5.close()
 
-    return arr1, arr2, arr3, arr4, arr5
+    return arr1, arr2, arr3, arr4
 
 def loadAscending():
     try:
-        file1 = open("test cases\\800ascending.txt")
-        file2 = open("test cases\\4000ascending.txt")
-        file3 = open("test cases\\20000ascending.txt")
-        file4 = open("test cases\\100000ascending.txt")
-        file5 = open("test cases\\500000ascending.txt")
+        file1 = open("test cases\\160ascending.txt")
+        file2 = open("test cases\\800ascending.txt")
+        file3 = open("test cases\\4000ascending.txt")
+        file4 = open("test cases\\20000ascending.txt")
 
         arr1 = []
         arr2 = []
         arr3 = []
         arr4 = []
-        arr5 = []
 
         for line in file1:
             arr1.append(int(line))
@@ -68,9 +60,6 @@ def loadAscending():
 
         for line in file4:
             arr4.append(int(line))
-
-        for line in file5:
-            arr5.append(int(line))
     
     except:
         print("Fail.")
@@ -79,23 +68,20 @@ def loadAscending():
         file2.close()
         file3.close()
         file4.close()
-        file5.close()
 
-    return arr1, arr2, arr3, arr4, arr5
+    return arr1, arr2, arr3, arr4
 
 def loadDescending():
     try:
-        file1 = open("test cases\\800descending.txt")
-        file2 = open("test cases\\4000descending.txt")
-        file3 = open("test cases\\20000descending.txt")
-        file4 = open("test cases\\100000descending.txt")
-        file5 = open("test cases\\500000descending.txt")
+        file1 = open("test cases\\160descending.txt")
+        file2 = open("test cases\\800descending.txt")
+        file3 = open("test cases\\4000descending.txt")
+        file4 = open("test cases\\20000descending.txt")
 
         arr1 = []
         arr2 = []
         arr3 = []
         arr4 = []
-        arr5 = []
 
         for line in file1:
             arr1.append(int(line))
@@ -108,9 +94,6 @@ def loadDescending():
 
         for line in file4:
             arr4.append(int(line))
-
-        for line in file5:
-            arr5.append(int(line))
     
     except:
         print("Fail.")
@@ -119,20 +102,19 @@ def loadDescending():
         file2.close()
         file3.close()
         file4.close()
-        file5.close()
 
-    return arr1, arr2, arr3, arr4, arr5
+    return arr1, arr2, arr3, arr4
 
 def selectionTest(opc: int) -> list:
     results = []
 
     match opc:
         case 1:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadAleatory()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadAleatory()
         case 2:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadAscending()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadAscending()
         case 3:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadDescending()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadDescending()
     
     time1 = time()
     selectionSort(temp_arr1)
@@ -154,11 +136,6 @@ def selectionTest(opc: int) -> list:
     time2 = time()
     results.append(time2 - time1)
 
-    time1 = time()
-    selectionSort(temp_arr5)
-    time2 = time()
-    results.append(time2 - time1)
-
     return results
 
 def insertionTest(opc: int) -> list:
@@ -166,11 +143,11 @@ def insertionTest(opc: int) -> list:
 
     match opc:
         case 1:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadAleatory()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4, = loadAleatory()
         case 2:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadAscending()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadAscending()
         case 3:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadDescending()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadDescending()
     
     time1 = time()
     insertionSort(temp_arr1)
@@ -192,11 +169,6 @@ def insertionTest(opc: int) -> list:
     time2 = time()
     results.append(time2 - time1)
 
-    time1 = time()
-    insertionSort(temp_arr5)
-    time2 = time()
-    results.append(time2 - time1)
-
     return results
 
 def bubbleTest(opc: int) -> list:
@@ -204,11 +176,11 @@ def bubbleTest(opc: int) -> list:
 
     match opc:
         case 1:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadAleatory()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadAleatory()
         case 2:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadAscending()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadAscending()
         case 3:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadDescending()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadDescending()
     
     time1 = time()
     bubbleSort(temp_arr1)
@@ -230,8 +202,36 @@ def bubbleTest(opc: int) -> list:
     time2 = time()
     results.append(time2 - time1)
 
+    return results
+
+def mergeTest(opc: int) -> list:
+    results = []
+
+    match opc:
+        case 1:
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadAleatory()
+        case 2:
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadAscending()
+        case 3:
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadDescending()
+    
     time1 = time()
-    bubbleSort(temp_arr5)
+    mergeSort(temp_arr1)
+    time2 = time()
+    results.append(time2 - time1)
+
+    time1 = time()
+    mergeSort(temp_arr2)
+    time2 = time()
+    results.append(time2 - time1)
+
+    time1 = time()
+    mergeSort(temp_arr3)
+    time2 = time()
+    results.append(time2 - time1)
+
+    time1 = time()
+    mergeSort(temp_arr4)
     time2 = time()
     results.append(time2 - time1)
 
@@ -242,11 +242,11 @@ def heapTest(opc: int) -> list:
 
     match opc:
         case 1:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadAleatory()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadAleatory()
         case 2:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadAscending()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadAscending()
         case 3:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadDescending()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadDescending()
     
     time1 = time()
     heapSort(temp_arr1)
@@ -268,25 +268,20 @@ def heapTest(opc: int) -> list:
     time2 = time()
     results.append(time2 - time1)
 
-    time1 = time()
-    heapSort(temp_arr5)
-    time2 = time()
-    results.append(time2 - time1)
-
     return results
 
 def quickTest(opc: int) -> list:
-    sys.setrecursionlimit(500000)
+    sys.setrecursionlimit(50000)
     
     results = []
 
     match opc:
         case 1:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadAleatory()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadAleatory()
         case 2:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadAscending()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadAscending()
         case 3:
-            temp_arr1, temp_arr2, temp_arr3, temp_arr4, temp_arr5 = loadDescending()
+            temp_arr1, temp_arr2, temp_arr3, temp_arr4 = loadDescending()
     
     time1 = time()
     quickSort(temp_arr1)
@@ -303,14 +298,9 @@ def quickTest(opc: int) -> list:
     time2 = time()
     results.append(time2 - time1)
 
-    # time1 = time()
-    # quickSort(temp_arr4)
-    # time2 = time()
-    # results.append(time2 - time1)
-
-    # time1 = time()
-    # quickSort(temp_arr5)
-    # time2 = time()
-    # results.append(time2 - time1)
+    time1 = time()
+    quickSort(temp_arr4)
+    time2 = time()
+    results.append(time2 - time1)
 
     return results
