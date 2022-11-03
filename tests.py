@@ -11,7 +11,7 @@ def loadSets(opc: int) -> list[list]:
         case 2:
             file = "ascending"
         case 3:
-            file = "decending"
+            file = "descending"
     
     try:
         file1 = open(f"test cases\\160{file}.txt")
@@ -56,7 +56,7 @@ def timeTest(algorith: Callable[[list], list], opc: int) -> list:
 
     results = []
     sets = loadSets(opc)
-    
+
     for i in range(4):
         time1 = time()
         algorith(sets[i])

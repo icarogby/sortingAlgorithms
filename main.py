@@ -6,28 +6,31 @@ from matplotlib import pyplot as plt
 def main():
     opc = int(input("Select: "))
 
-    x = [1, 2, 3, 4]
+    x = [160, 800, 4000, 20000]
 
-    y = mediaTimeTest(selectionSort, opc)
+    selectionY = mediaTimeTest(selectionSort, opc)
+    insertionY = mediaTimeTest(insertionSort, opc)
+    bubleY = mediaTimeTest(bubbleSort, opc)
+    mergeY = mediaTimeTest(mergeSort, opc)
+    heapY = mediaTimeTest(heapSort, opc)
+    quickY = mediaTimeTest(quickSort, opc)
 
-    # listatest = test(selectionTest, opc)
+    plt.plot(x, selectionY, color = 'r', label = "Selection Sort")
+    plt.plot(x, insertionY, color = 'b', label = "Insertion Sort")
+    plt.plot(x, bubleY, color = 'y', label = "Bubble Sort")
+    plt.plot(x, mergeY, color = 'c', label = "Merge Sort")
+    plt.plot(x, heapY, color = 'm', label = "Heap Sort")
+    plt.plot(x, quickY, label = "Quick Sort")
 
-    # Results1 = selectionTest(o)
-    # Results2 = insertionTest(o)
-    # Results3 = bubbleTest(o)
+    plt.title("Sorting Algorithms")
+    plt.xlabel("Number of Elements")
+    plt.ylabel("Media of time (seconds)")
 
-
-    # Results5 = heapTest(o)
-    # Results6 = quickTest(o)
-
-    # plt.plot(x, Results1)
-    # plt.plot(x, Results2)
-    # plt.plot(x, Results3)
-    # plt.plot(x, listatest)
-    # plt.plot(x, Results5)
-    plt.plot(x, y)
-
+    plt.grid(True)
+    plt.yscale("log")
+    plt.legend()
     plt.show()
-
+    plt.savefig("plot.png")
+    
 if __name__ == "__main__":
     main()
