@@ -4,9 +4,9 @@ from algorithms import *
 from matplotlib import pyplot as plt
 
 def main():
-    opc = int(input("Select: "))
+    opc = int(input("1) Aleatory\n2) Ascending\n3) Descending\n\nSelect: "))
 
-    x = [160, 800, 4000, 20000]
+    x = [1, 2, 3, 4, 5, 6]
 
     selectionY = mediaTimeTest(selectionSort, opc)
     insertionY = mediaTimeTest(insertionSort, opc)
@@ -20,7 +20,7 @@ def main():
     plt.plot(x, bubleY, color = 'y', label = "Bubble Sort")
     plt.plot(x, mergeY, color = 'c', label = "Merge Sort")
     plt.plot(x, heapY, color = 'm', label = "Heap Sort")
-    plt.plot(x, quickY, label = "Quick Sort")
+    plt.plot(x, quickY, color = 'g', label = "Quick Sort")
 
     plt.title("Sorting Algorithms")
     plt.xlabel("Number of Elements")
@@ -29,8 +29,7 @@ def main():
     plt.grid(True)
     plt.yscale("log")
     plt.legend()
-    plt.show()
-    plt.savefig("plot.png")
+    plt.savefig("plottest2ale.png")
     
 if __name__ == "__main__":
     main()

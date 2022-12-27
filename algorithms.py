@@ -132,5 +132,4 @@ def quickSort(arr: list) -> list:
         arr[pi:] = quickSort(arr[pi:])
 
     return arr
-
     

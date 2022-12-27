@@ -14,15 +14,19 @@ def loadSets(opc: int) -> list[list]:
             file = "descending"
     
     try:
-        file1 = open(f"test cases\\160{file}.txt")
-        file2 = open(f"test cases\\800{file}.txt")
-        file3 = open(f"test cases\\4000{file}.txt")
-        file4 = open(f"test cases\\20000{file}.txt")
+        file1 = open(f"test cases\\512{file}.txt")
+        file2 = open(f"test cases\\1024{file}.txt")
+        file3 = open(f"test cases\\2048{file}.txt")
+        file4 = open(f"test cases\\4096{file}.txt")
+        file5 = open(f"test cases\\8192{file}.txt")
+        file6 = open(f"test cases\\16384{file}.txt")
 
         arr1 = []
         arr2 = []
         arr3 = []
         arr4 = []
+        arr5 = []
+        arr6 = []
 
         for line in file1:
             arr1.append(int(line))
@@ -36,10 +40,18 @@ def loadSets(opc: int) -> list[list]:
         for line in file4:
             arr4.append(int(line))
 
+        for line in file5:
+            arr5.append(int(line))
+
+        for line in file6:
+            arr6.append(int(line))
+
         sets.append(arr1)
         sets.append(arr2)
         sets.append(arr3)
         sets.append(arr4)
+        sets.append(arr5)
+        sets.append(arr6)
     
     except:
         print("Fail.")
@@ -48,6 +60,8 @@ def loadSets(opc: int) -> list[list]:
         file2.close()
         file3.close()
         file4.close()
+        file5.close()
+        file6.close()
 
     return sets
 
@@ -57,7 +71,7 @@ def timeTest(algorith: Callable[[list], list], opc: int) -> list:
     results = []
     sets = loadSets(opc)
 
-    for i in range(4):
+    for i in range(6):
         time1 = time()
         algorith(sets[i])
         time2 = time()
@@ -66,15 +80,15 @@ def timeTest(algorith: Callable[[list], list], opc: int) -> list:
     return results
 
 def mediaTimeTest(algorith: Callable[[list], list], opc: int) -> list:
-    results = [0, 0, 0, 0]
+    results = [0, 0, 0, 0, 0, 0]
 
     for i in range(3):
         temp = timeTest(algorith, opc)
 
-        for j in range(4):
+        for j in range(6):
             results[j] = results[j] + temp[j]
 
-    for j in range(4):
+    for j in range(6):
         results[j] = results[j]/3
 
     return results
