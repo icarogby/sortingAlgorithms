@@ -3,11 +3,11 @@ from matplotlib import pyplot as plt
 def saveCSV(list1, list2, list3, list4, list5, list6, opc):
     try:
         if opc == 1:
-            file = open(f'aleatory.csv', 'w')
+            file = open(f'results\\aleatory.csv', 'w')
         elif opc == 2:
-            file = open(f'ascending.csv', 'w')
+            file = open(f'results\\ascending.csv', 'w')
         elif opc == 3:
-            file = open(f'descending.csv', 'w')
+            file = open(f'results\\descending.csv', 'w')
 
         file.write("Algorithm/Number of Elements, 512, 1024, 2048, 4096, 8192, 16384\n")
         
@@ -60,12 +60,12 @@ def saveCSV(list1, list2, list3, list4, list5, list6, opc):
 def savePNG(selectionY, insertionY, bubbleY, mergeY, heapY, quickY, opc):
     x = [512, 1024, 2048, 4096, 8192, 16384]
     
-    plt.plot(x, selectionY, color = 'r', label = "Selection Sort")
-    plt.plot(x, insertionY, color = 'b', label = "Insertion Sort")
-    plt.plot(x, bubbleY, color = 'y', label = "Bubble Sort")
-    plt.plot(x, mergeY, color = 'c', label = "Merge Sort")
-    plt.plot(x, heapY, color = 'm', label = "Heap Sort")
-    plt.plot(x, quickY, color = 'g', label = "Quick Sort")
+    plt.plot(x, selectionY, marker='o', color = 'r', label = "Selection Sort")
+    plt.plot(x, insertionY, marker='o', color = 'b', label = "Insertion Sort")
+    plt.plot(x, bubbleY, marker='o', color = 'y', label = "Bubble Sort")
+    plt.plot(x, mergeY, marker='o', color = 'c', label = "Merge Sort")
+    plt.plot(x, heapY, marker='o', color = 'm', label = "Heap Sort")
+    plt.plot(x, quickY, marker='o', color = 'g', label = "Quick Sort")
 
     plt.title("Sorting Algorithms")
     plt.xlabel("Number of Elements")
@@ -77,8 +77,8 @@ def savePNG(selectionY, insertionY, bubbleY, mergeY, heapY, quickY, opc):
     plt.legend()
 
     if opc == 1:
-        plt.savefig("aleatory.png")
+        plt.savefig("results\\aleatory.png")
     elif opc == 2:
-        plt.savefig("ascending.png")
+        plt.savefig("results\\ascending.png")
     elif opc == 3:
-        plt.savefig("descending.png")
+        plt.savefig("results\\descending.png")
